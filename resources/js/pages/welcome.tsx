@@ -224,14 +224,60 @@ function AboutSection() {
 
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                     <div ref={fadeIn2.ref} className={`transition-all duration-1000 delay-200 ${fadeIn2.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <h3 className="text-3xl font-bold text-[#0029A2] mb-6">Our Mission</h3>
-                        <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                            To be the ultimate AI solutions provider—delivering real, measurable transformation for industries, governments, and societies worldwide.
-                        </p>
-                        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                            We combine cutting-edge AI, advanced hardware, and intelligent automation to deliver measurable, on-the-ground efficiency that drives your business forward.
-                        </p>
+                        <div className="mb-8">
+                            <h3 className="text-2xl font-bold text-[#0029A2] mb-4">Our Vision</h3>
+                            <p className="text-lg text-gray-700 leading-relaxed">
+                                To drive astronomical efficiency by harnessing applied AI and hardware innovation.
+                            </p>
+                        </div>
 
+                        <div className="mb-8">
+                            <h3 className="text-2xl font-bold text-[#0029A2] mb-4">Our Mission</h3>
+                            <p className="text-lg text-gray-700 leading-relaxed">
+                                To be the ultimate AI solutions provider—delivering real, measurable transformation for industries, governments, and societies worldwide.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-2xl font-bold text-[#0029A2] mb-4">Our Core Values</h3>
+                            <div className="space-y-3">
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
+                                    <div>
+                                        <span className="font-semibold text-[#0029A2]">Innovation:</span>
+                                        <span className="text-gray-700"> Pushing boundaries with practical AI applications</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
+                                    <div>
+                                        <span className="font-semibold text-[#0029A2]">Impact:</span>
+                                        <span className="text-gray-700"> Creating tangible change that matters</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
+                                    <div>
+                                        <span className="font-semibold text-[#0029A2]">Scalability:</span>
+                                        <span className="text-gray-700"> From single facilities to national deployments</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
+                                    <div>
+                                        <span className="font-semibold text-[#0029A2]">Ethics:</span>
+                                        <span className="text-gray-700"> Responsible AI designed with compliance at its core</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
+                                    <div>
+                                        <span className="font-semibold text-[#0029A2]">Partnership:</span>
+                                        <span className="text-gray-700"> Working alongside you to achieve success</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div ref={fadeIn3.ref} className={`relative transition-all duration-1000 delay-400 ${fadeIn3.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
@@ -420,11 +466,40 @@ function ServicesSection() {
 
                 {/* Custom Solutions CTA */}
                 <div className="mt-12 bg-[#0029A2] rounded-2xl p-8 text-[#FFFFFF] text-center">
-                    <h3 className="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
+                    <h3 className="text-2xl font-bold mb-4">Custom Solutions & Consultancy</h3>
                     <p className="mb-6 max-w-2xl mx-auto">
                         Every challenge is unique. We combine and adapt our technologies to engineer custom,
                         practical applications that solve your most complex problems.
                     </p>
+                    <div className="mb-6">
+                        <h4 className="text-xl font-semibold mb-3">Cybersecurity & Data Protection Services</h4>
+                        <div className="grid md:grid-cols-2 gap-3 max-w-2xl mx-auto text-left">
+                            <div className="flex items-center gap-2">
+                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Proactive threat intelligence</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Risk assessment & mitigation</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Regulatory compliance</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>Business continuity planning</span>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#contact" className="inline-flex items-center gap-2 bg-[#FFFFFF] text-[#0029A2] font-bold px-6 py-3 rounded-full hover:bg-[#808080] hover:text-[#FFFFFF] transition-colors">
                         <span>Let's Build Your Solution</span>
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
