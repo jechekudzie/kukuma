@@ -206,119 +206,602 @@ function HeroSection() {
     );
 }
 
-// About Section with different background
+// About Section with enhanced visuals and images
 function AboutSection() {
     const fadeIn1 = useFadeInAnimation();
     const fadeIn2 = useFadeInAnimation();
     const fadeIn3 = useFadeInAnimation();
+    const fadeIn4 = useFadeInAnimation();
+    const fadeIn5 = useFadeInAnimation();
 
     return (
         <section id="about" className="py-20 bg-gradient-to-b from-white to-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div ref={fadeIn1.ref} className={`text-center mb-16 transition-all duration-1000 ${fadeIn1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                {/* Header Section with Hero Image */}
+                <div ref={fadeIn1.ref} className={`text-center mb-20 transition-all duration-1000 ${fadeIn1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                     <h2 className="text-4xl md:text-5xl font-bold text-[#0029A2] mb-6">Who We Are</h2>
-                    <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                    <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12">
                         Africa's premier applied AI company, engineering intelligent systems that transform businesses from the ground up.
                     </p>
+
+                    {/* Hero Image with Enhanced Hover Effects */}
+                    <div className="relative max-w-4xl mx-auto mb-16 group">
+                        <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#0029A2] to-[#00CBFF] p-1 transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-3xl group-hover:shadow-[#00CBFF]/20">
+                            <div className="w-full h-full bg-white rounded-xl flex items-center justify-center relative overflow-hidden">
+                                <img
+                                    src="/images/about-hero.jpg"
+                                    alt="Kukuma Advanced Technologies - AI Innovation in Africa"
+                                    className="w-full h-full object-cover rounded-xl transform transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                                    onError={(e) => {
+                                        e.currentTarget.style.display = 'none';
+                                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                                    }}
+                                />
+                                {/* Fallback placeholder */}
+                                <div className="hidden w-full h-full bg-gradient-to-br from-[#0029A2] to-[#00CBFF] rounded-xl items-center justify-center text-white">
+                                    <div className="text-center">
+                                        <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                        <p className="text-lg font-semibold">AI Innovation in Africa</p>
+                                        <p className="text-sm opacity-80">Place your hero image: about-hero.jpg</p>
+                                    </div>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-                    <div ref={fadeIn2.ref} className={`transition-all duration-1000 delay-200 ${fadeIn2.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-                        <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-[#0029A2] mb-4">Our Vision</h3>
-                            <p className="text-lg text-gray-700 leading-relaxed">
-                                To drive astronomical efficiency by harnessing applied AI and hardware innovation.
-                            </p>
+                                {/* Hover Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0029A2]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl flex items-end justify-center pb-8">
+                                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                        <div className="bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 border border-white/30">
+                                            <p className="font-semibold text-lg">AI Innovation in Africa</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Animated Corner Elements */}
+                                <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-[#00CBFF] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+                                <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-[#00CBFF] opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+                                <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-[#00CBFF] opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+                                <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#00CBFF] opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0"></div>
+
+                                {/* Pulse Effect */}
+                                <div className="absolute inset-0 rounded-xl border-2 border-[#00CBFF] opacity-0 group-hover:opacity-30 animate-ping group-hover:animate-pulse transition-opacity duration-500"></div>
+                            </div>
                         </div>
 
-                        <div className="mb-8">
-                            <h3 className="text-2xl font-bold text-[#0029A2] mb-4">Our Mission</h3>
-                            <p className="text-lg text-gray-700 leading-relaxed">
-                                To be the ultimate AI solutions provider—delivering real, measurable transformation for industries, governments, and societies worldwide.
-                            </p>
+                        {/* Floating Action Button */}
+                        <div className="absolute -bottom-6 -right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0">
+                            <div className="bg-gradient-to-r from-[#0029A2] to-[#00CBFF] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </div>
                         </div>
 
-                        <div>
-                            <h3 className="text-2xl font-bold text-[#0029A2] mb-4">Our Core Values</h3>
-                            <div className="space-y-3">
-                                <div className="flex items-start gap-3">
-                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
-                                    <div>
-                                        <span className="font-semibold text-[#0029A2]">Innovation:</span>
-                                        <span className="text-gray-700"> Pushing boundaries with practical AI applications</span>
+                        {/* Background Glow Effect */}
+                        <div className="absolute -inset-4 bg-gradient-to-r from-[#0029A2]/20 to-[#00CBFF]/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
+                    </div>
+                </div>
+
+                {/* Vision & Mission Section - Enhanced Design */}
+                <div className="mb-24">
+                    {/* Vision Section */}
+                    <div ref={fadeIn2.ref} className={`mb-16 transition-all duration-1000 delay-200 ${fadeIn2.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden rounded-3xl">
+                            {/* Animated Grid Pattern */}
+                            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,188,212,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,188,212,0.05)_1px,transparent_1px)] bg-[size:6rem_6rem]"></div>
+
+                            {/* Gradient Orbs */}
+                            <div className="absolute top-0 -left-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+                            <div className="absolute top-0 -right-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+                            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}}></div>
+
+                            {/* Floating Particles */}
+                            <div className="absolute inset-0">
+                                {[...Array(8)].map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-float"
+                                        style={{
+                                            left: `${Math.random() * 100}%`,
+                                            top: `${Math.random() * 100}%`,
+                                            animationDelay: `${Math.random() * 5}s`,
+                                            animationDuration: `${10 + Math.random() * 20}s`
+                                        }}
+                                    />
+                                ))}
+                            </div>
+
+                            {/* Content */}
+                            <div className="relative p-8 md:p-12">
+                                <div className="max-w-4xl mx-auto">
+                                    <div className="grid lg:grid-cols-12 gap-8 items-center">
+                                        {/* Icon Section */}
+                                        <div className="lg:col-span-3 flex justify-center lg:justify-start">
+                                            <div className="relative group">
+                                                <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-1">
+                                                    <img
+                                                        src="/images/vision-icon.jpg"
+                                                        alt="Our Vision"
+                                                        className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
+                                                        onError={(e) => {
+                                                            e.currentTarget.style.display = 'none';
+                                                            e.currentTarget.nextElementSibling.style.display = 'flex';
+                                                        }}
+                                                    />
+                                                    <div className="hidden w-full h-full bg-white/20 backdrop-blur-sm rounded-xl items-center justify-center">
+                                                        <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                {/* Floating badge */}
+                                                <div className="absolute -top-3 -right-3 bg-[#00CBFF] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                                    VISION
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Content Section */}
+                                        <div className="lg:col-span-9 text-center lg:text-left">
+                                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Our Vision</h3>
+                                            <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6">
+                                                To drive <span className="text-[#00CBFF] font-semibold">astronomical efficiency</span> by harnessing applied AI and hardware innovation.
+                                            </p>
+                                            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                                                <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30">
+                                                    Applied AI
+                                                </span>
+                                                <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30">
+                                                    Hardware Innovation
+                                                </span>
+                                                <span className="bg-[#00CBFF]/30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-[#00CBFF]/50">
+                                                    Astronomical Efficiency
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
-                                    <div>
-                                        <span className="font-semibold text-[#0029A2]">Impact:</span>
-                                        <span className="text-gray-700"> Creating tangible change that matters</span>
+                            </div>
+                        </div>
+                        </div>
+
+                    {/* Mission Section */}
+                    <div ref={fadeIn3.ref} className={`transition-all duration-1000 delay-400 ${fadeIn3.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden rounded-3xl">
+                            {/* Animated Grid Pattern */}
+                            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,188,212,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,188,212,0.05)_1px,transparent_1px)] bg-[size:6rem_6rem]"></div>
+
+                            {/* Gradient Orbs */}
+                            <div className="absolute top-0 -right-4 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+                            <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '2s'}}></div>
+                            <div className="absolute -bottom-8 right-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{animationDelay: '4s'}}></div>
+
+                            {/* Floating Particles */}
+                            <div className="absolute inset-0">
+                                {[...Array(8)].map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-float"
+                                        style={{
+                                            left: `${Math.random() * 100}%`,
+                                            top: `${Math.random() * 100}%`,
+                                            animationDelay: `${Math.random() * 5}s`,
+                                            animationDuration: `${10 + Math.random() * 20}s`
+                                        }}
+                                    />
+                                ))}
+                            </div>
+
+                            {/* Content */}
+                            <div className="relative p-8 md:p-12">
+                                <div className="max-w-4xl mx-auto">
+                                    <div className="grid lg:grid-cols-12 gap-8 items-center">
+                                        {/* Content Section - Reversed order for visual balance */}
+                                        <div className="lg:col-span-9 text-center lg:text-left order-2 lg:order-1">
+                                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Our Mission</h3>
+                                            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed mb-6">
+                                                To be the <span className="text-cyan-400 font-semibold">ultimate AI solutions provider</span>—delivering real, measurable transformation for industries, governments, and societies worldwide.
+                                            </p>
+                                            <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                                                <span className="bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+                                                    Industries
+                                                </span>
+                                                <span className="bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+                                                    Governments
+                                                </span>
+                                                <span className="bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+                                                    Societies
+                                                </span>
+                                                <span className="bg-cyan-500/10 backdrop-blur-sm text-cyan-400 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/20">
+                                                    Measurable Impact
+                                                </span>
+                                            </div>
+                        </div>
+
+                                        {/* Icon Section */}
+                                        <div className="lg:col-span-3 flex justify-center lg:justify-end order-1 lg:order-2">
+                                            <div className="relative group">
+                                                <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-1">
+                                                    <img
+                                                        src="/images/mission-icon.jpg"
+                                                        alt="Our Mission"
+                                                        className="w-full h-full object-cover rounded-xl group-hover:scale-110 transition-transform duration-500"
+                                                        onError={(e) => {
+                                                            e.currentTarget.style.display = 'none';
+                                                            e.currentTarget.nextElementSibling.style.display = 'flex';
+                                                        }}
+                                                    />
+                                                    <div className="hidden w-full h-full bg-white/20 backdrop-blur-sm rounded-xl items-center justify-center">
+                                                        <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                        </svg>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
-                                    <div>
-                                        <span className="font-semibold text-[#0029A2]">Scalability:</span>
-                                        <span className="text-gray-700"> From single facilities to national deployments</span>
+                                                {/* Floating badge */}
+                                                <div className="absolute -top-3 -left-3 bg-cyan-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                                    MISSION
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
-                                    <div>
-                                        <span className="font-semibold text-[#0029A2]">Ethics:</span>
-                                        <span className="text-gray-700"> Responsible AI designed with compliance at its core</span>
                                     </div>
                                 </div>
-                                <div className="flex items-start gap-3">
-                                    <div className="w-2 h-2 bg-[#00CBFF] rounded-full mt-2"></div>
-                                    <div>
-                                        <span className="font-semibold text-[#0029A2]">Partnership:</span>
-                                        <span className="text-gray-700"> Working alongside you to achieve success</span>
                                     </div>
+                                </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                {/* Core Values with Improved Layout and Background */}
+                <div ref={fadeIn4.ref} className={`relative mb-24 transition-all duration-1000 delay-600 ${fadeIn4.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    {/* Background Section */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/50 -mx-4 sm:-mx-6 lg:-mx-8 rounded-3xl"></div>
+
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 -mx-4 sm:-mx-6 lg:-mx-8">
+                        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,41,162,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,41,162,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] rounded-3xl"></div>
+
+                        {/* Decorative Elements */}
+                        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#00CBFF]/10 to-transparent rounded-full blur-2xl"></div>
+                        <div className="absolute top-20 right-20 w-24 h-24 bg-gradient-to-br from-[#0029A2]/10 to-transparent rounded-full blur-2xl"></div>
+                        <div className="absolute bottom-10 left-1/4 w-40 h-40 bg-gradient-to-br from-[#00CBFF]/5 to-transparent rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-br from-[#0029A2]/8 to-transparent rounded-full blur-2xl"></div>
+                        </div>
+
+                    {/* Content */}
+                    <div className="relative py-20">
+                        <div className="text-center mb-16">
+                            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-[#00CBFF]/20 rounded-full px-6 py-2 mb-6">
+                                <div className="w-2 h-2 bg-[#00CBFF] rounded-full animate-pulse"></div>
+                                <span className="text-[#0029A2] font-semibold text-sm uppercase tracking-wide">Our Foundation</span>
+                                </div>
+                            <h3 className="text-3xl md:text-4xl font-bold text-[#0029A2] mb-6">Our Core Values</h3>
+                            <p className="text-xl text-gray-700 max-w-3xl mx-auto">The principles that guide everything we do, forming the foundation of our AI-driven mission</p>
+                    </div>
+
+                    {/* Mobile: Stack Layout, Desktop: Circular Layout */}
+                    <div className="block md:hidden">
+                        {/* Mobile Stack Layout */}
+                        <div className="space-y-6 max-w-sm mx-auto">
+                            {[
+                                {
+                                    title: "Innovation",
+                                    description: "Pushing boundaries with practical AI applications",
+                                    image: "innovation.jpg",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    )
+                                },
+                                {
+                                    title: "Impact",
+                                    description: "Creating tangible change that matters",
+                                    image: "impact.jpg",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                    )
+                                },
+                                {
+                                    title: "Scalability",
+                                    description: "From single facilities to national deployments",
+                                    image: "scalability.jpg",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                                        </svg>
+                                    )
+                                },
+                                {
+                                    title: "Ethics",
+                                    description: "Responsible AI designed with compliance at its core",
+                                    image: "ethics.jpg",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    )
+                                },
+                                {
+                                    title: "Partnership",
+                                    description: "Working alongside you to achieve success",
+                                    image: "partnership.jpg",
+                                    icon: (
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                    )
+                                }
+                            ].map((value, index) => (
+                                <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                                    <div className="p-6">
+                                        <div className="flex items-center gap-4 mb-4">
+                                            <div className="w-16 h-16 rounded-xl overflow-hidden bg-gradient-to-br from-[#0029A2]/10 to-[#00CBFF]/10 flex-shrink-0 relative">
+                                                <img
+                                                    src={`/images/${value.image}`}
+                                                    alt={value.title}
+                                                    className="w-full h-full object-cover"
+                                                    onError={(e) => {
+                                                        e.currentTarget.style.display = 'none';
+                                                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                                                    }}
+                                                />
+                                                <div className="hidden w-full h-full bg-gradient-to-br from-[#0029A2] to-[#00CBFF] items-center justify-center">
+                                                    {value.icon}
+                                    </div>
+                                </div>
+                                            <div className="flex-1">
+                                                <h4 className="text-xl font-bold text-[#0029A2] mb-2 group-hover:text-[#00CBFF] transition-colors">
+                                                    {value.title}
+                                                </h4>
+                                                <p className="text-gray-700 text-sm leading-relaxed">{value.description}</p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Desktop: Circular Hub Layout */}
+                    <div className="hidden md:block">
+                        <div className="relative">
+                            {/* Central Hub */}
+                            <div className="flex justify-center mb-16">
+                                <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-to-br from-[#0029A2] to-[#00CBFF] shadow-2xl flex items-center justify-center">
+                                    <div className="text-center text-white">
+                                        <svg className="w-12 h-12 lg:w-16 lg:h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                        <p className="text-sm lg:text-base font-bold">KUKUMA</p>
+                                        <p className="text-xs opacity-90">VALUES</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Values in a 2-3-0 arrangement */}
+                            <div className="space-y-12">
+                                {/* Top Row - 2 cards */}
+                                <div className="flex justify-center gap-8 lg:gap-16">
+                                    {[
+                                        {
+                                            title: "Innovation",
+                                            description: "Pushing boundaries with practical AI applications",
+                                            image: "innovation.jpg",
+                                            icon: (
+                                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Impact",
+                                            description: "Creating tangible change that matters",
+                                            image: "impact.jpg",
+                                            icon: (
+                                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                                </svg>
+                                            )
+                                        }
+                                    ].map((value, index) => (
+                                        <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100 w-80">
+                                            <div className="p-6">
+                                                <div className="relative mb-4">
+                                                    <div className="w-full h-32 rounded-xl overflow-hidden bg-gradient-to-br from-[#0029A2]/10 to-[#00CBFF]/10">
+                                                        <img
+                                                            src={`/images/${value.image}`}
+                                                            alt={value.title}
+                                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                            onError={(e) => {
+                                                                e.currentTarget.style.display = 'none';
+                                                                e.currentTarget.nextElementSibling.style.display = 'flex';
+                                                            }}
+                                                        />
+                                                        <div className="hidden w-full h-full bg-gradient-to-br from-[#0029A2] to-[#00CBFF] items-center justify-center">
+                                                            {value.icon}
+                                    </div>
+                                </div>
+                                                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+                                                        <div className="w-12 h-12 bg-gradient-to-br from-[#0029A2] to-[#00CBFF] rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                                                            {value.icon}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="text-center pt-2">
+                                                    <h4 className="text-xl lg:text-2xl font-bold text-[#0029A2] mb-3 group-hover:text-[#00CBFF] transition-colors duration-300">
+                                                        {value.title}
+                                                    </h4>
+                                                    <p className="text-gray-700 leading-relaxed">
+                                                        {value.description}
+                                                    </p>
+                                                </div>
+                                                <div className="mt-4 h-1 bg-gray-100 rounded-full overflow-hidden">
+                                                    <div className="h-full bg-gradient-to-r from-[#0029A2] to-[#00CBFF] rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Bottom Row - 3 cards */}
+                                <div className="flex justify-center gap-6 lg:gap-8">
+                                    {[
+                                        {
+                                            title: "Scalability",
+                                            description: "From single facilities to national deployments",
+                                            image: "scalability.jpg",
+                                            icon: (
+                                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                                    </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Ethics",
+                                            description: "Responsible AI designed with compliance at its core",
+                                            image: "ethics.jpg",
+                                            icon: (
+                                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Partnership",
+                                            description: "Working alongside you to achieve success",
+                                            image: "partnership.jpg",
+                                            icon: (
+                                                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                </svg>
+                                            )
+                                        }
+                                    ].map((value, index) => (
+                                        <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 border border-gray-100 w-72">
+                                            <div className="p-6">
+                                                <div className="relative mb-4">
+                                                    <div className="w-full h-28 rounded-xl overflow-hidden bg-gradient-to-br from-[#0029A2]/10 to-[#00CBFF]/10">
+                                                        <img
+                                                            src={`/images/${value.image}`}
+                                                            alt={value.title}
+                                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                            onError={(e) => {
+                                                                e.currentTarget.style.display = 'none';
+                                                                e.currentTarget.nextElementSibling.style.display = 'flex';
+                                                            }}
+                                                        />
+                                                        <div className="hidden w-full h-full bg-gradient-to-br from-[#0029A2] to-[#00CBFF] items-center justify-center">
+                                                            {value.icon}
+                                    </div>
+                                </div>
+                                                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+                                                        <div className="w-10 h-10 bg-gradient-to-br from-[#0029A2] to-[#00CBFF] rounded-full flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                                                            {value.icon}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="text-center pt-2">
+                                                    <h4 className="text-lg lg:text-xl font-bold text-[#0029A2] mb-2 group-hover:text-[#00CBFF] transition-colors duration-300">
+                                                        {value.title}
+                                                    </h4>
+                                                    <p className="text-gray-700 leading-relaxed text-sm">
+                                                        {value.description}
+                                                    </p>
+                                                </div>
+                                                <div className="mt-3 h-1 bg-gray-100 rounded-full overflow-hidden">
+                                                    <div className="h-full bg-gradient-to-r from-[#0029A2] to-[#00CBFF] rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div ref={fadeIn3.ref} className={`relative transition-all duration-1000 delay-400 ${fadeIn3.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                        <div className="bg-gradient-to-br from-[#0029A2] to-[#00CBFF] rounded-2xl p-8 text-white shadow-2xl">
-                            <h3 className="text-2xl font-bold mb-6">The Kukuma Advantage</h3>
-                            <div className="space-y-4">
-                                <div className="flex items-start gap-3">
-                                    <svg className="w-6 h-6 text-[#00CBFF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">AI That Actually Works</h4>
-                                        <p className="text-white/90 text-sm">Tested and proven in real-world African environments</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <svg className="w-6 h-6 text-[#00CBFF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">Astronomical Efficiency</h4>
-                                        <p className="text-white/90 text-sm">Direct cost savings you can measure</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <svg className="w-6 h-6 text-[#00CBFF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-                                    </svg>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">Africa-Tested, Globally Ready</h4>
-                                        <p className="text-white/90 text-sm">Built to thrive in challenging conditions</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <svg className="w-6 h-6 text-[#00CBFF] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {/* Bottom CTA */}
+                        <div className="text-center mt-16">
+                            <div className="inline-flex items-center gap-3 bg-white/60 backdrop-blur-sm border border-[#00CBFF]/30 rounded-full px-8 py-4 shadow-lg hover:bg-white/80 transition-all duration-300">
+                                <svg className="w-6 h-6 text-[#00CBFF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                <span className="text-[#0029A2] font-semibold text-lg">These values drive every AI solution we create</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Kukuma Advantage with Solid Background */}
+                <div ref={fadeIn5.ref} className={`relative transition-all duration-1000 delay-800 ${fadeIn5.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <div className="relative rounded-3xl overflow-hidden">
+                        {/* Solid Background */}
+                        <div className="absolute inset-0 bg-[#1362BE]"></div>
+
+                        {/* Subtle Pattern Overlay */}
+                        <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+                        {/* Decorative Elements */}
+                        <div className="absolute top-6 right-6 w-20 h-20 bg-white/5 rounded-full blur-2xl"></div>
+                        <div className="absolute bottom-6 left-6 w-16 h-16 bg-white/8 rounded-full blur-xl"></div>
+                        <div className="absolute top-1/3 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-white/60 rounded-full"></div>
+
+                        <div className="relative p-12 text-white">
+                            <div className="max-w-4xl mx-auto text-center">
+                                <h3 className="text-3xl md:text-4xl font-bold mb-8">The Kukuma Advantage</h3>
+
+                                <div className="grid md:grid-cols-2 gap-8">
+                                    {[
+                                        {
+                                            title: "AI That Actually Works",
+                                            description: "Tested and proven in real-world African environments",
+                                            icon: (
+                                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Astronomical Efficiency",
+                                            description: "Direct cost savings you can measure",
+                                            icon: (
+                                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Africa-Tested, Globally Ready",
+                                            description: "Built to thrive in challenging conditions",
+                                            icon: (
+                                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                                                </svg>
+                                            )
+                                        },
+                                        {
+                                            title: "Proven ROI",
+                                            description: "Measurable impact on your bottom line",
+                                            icon: (
+                                                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                                     </svg>
-                                    <div>
-                                        <h4 className="font-semibold mb-1">Proven ROI</h4>
-                                        <p className="text-white/90 text-sm">Measurable impact on your bottom line</p>
+                                            )
+                                        }
+                                    ].map((advantage, index) => (
+                                        <div key={index} className="flex items-start gap-4 p-6 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all duration-300">
+                                            <div className="flex-shrink-0 w-12 h-12 bg-[#00CBFF]/30 rounded-lg flex items-center justify-center">
+                                                {advantage.icon}
                                     </div>
+                                            <div className="text-left">
+                                                <h4 className="text-xl font-bold mb-2">{advantage.title}</h4>
+                                                <p className="text-white/90 leading-relaxed">{advantage.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -408,7 +891,7 @@ function ServicesSection() {
     });
 
     return (
-        <section id="solutions" className="py-20 bg-[#000000]">
+        <section id="solutions" className="py-20 bg-[#11192E]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-6">Our Solutions Portfolio</h2>
@@ -429,12 +912,47 @@ function ServicesSection() {
                             {/* Animated Border */}
                             <div className="absolute inset-0 bg-[#00CBFF] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                            <div className="relative bg-[#FFFFFF] m-[2px] rounded-2xl p-8">
-                                <div className="w-16 h-16 bg-[#0029A2] rounded-xl flex items-center justify-center mb-6 text-[#FFFFFF] group-hover:scale-110 transition-transform duration-300">
-                                    {service.icon}
+                            <div className="relative bg-[#FFFFFF] m-[2px] rounded-2xl overflow-hidden">
+                                {/* Image Placeholder */}
+                                <div className="relative h-48 bg-gradient-to-br from-[#0029A2]/10 to-[#00CBFF]/10 overflow-hidden">
+                                    <img
+                                        src={`/images/solution-${index + 1}.jpg`}
+                                        alt={service.title}
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        onError={(e) => {
+                                            e.currentTarget.style.display = 'none';
+                                            e.currentTarget.nextElementSibling.style.display = 'flex';
+                                        }}
+                                    />
+                                    {/* Fallback placeholder */}
+                                    <div className="w-full h-full bg-gradient-to-br from-[#0029A2]/20 to-[#00CBFF]/20 flex items-center justify-center">
+                                        <div className="text-center text-[#0029A2]">
+                                            <div className="w-16 h-16 bg-[#0029A2] rounded-xl flex items-center justify-center mb-4 text-[#FFFFFF] mx-auto">
+                                                {service.icon}
+                                            </div>
+                                            <p className="text-sm font-semibold">Solution Image</p>
+                                            <p className="text-xs opacity-70">solution-{index + 1}.jpg</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Overlay on hover */}
+                                    <div className="absolute inset-0 bg-[#0029A2]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <div className="text-center text-white">
+                                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-2 mx-auto">
+                                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                </svg>
+                                            </div>
+                                            <p className="text-sm font-semibold">View Details</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-2xl font-bold text-[#0029A2] mb-3">{service.title}</h3>
-                                <p className="text-[#808080] mb-4 font-medium">{service.description}</p>
+
+                                {/* Content */}
+                                <div className="p-8">
+                                    <h3 className="text-2xl font-bold text-[#0029A2] mb-3">{service.title}</h3>
+                                    <p className="text-[#808080] mb-4 font-medium">{service.description}</p>
 
                                 <ul className="space-y-2 mb-6">
                                     {service.features.map((feature, fIndex) => (
@@ -453,59 +971,146 @@ function ServicesSection() {
                                     </p>
                                 </div>
 
-                                <a href="#contact" className="inline-flex items-center gap-2 mt-4 text-[#0029A2] font-semibold hover:text-[#00CBFF] transition-colors">
-                                    Learn More
-                                    <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                </a>
+                                    <a href="#contact" className="inline-flex items-center gap-2 mt-4 text-[#0029A2] font-semibold hover:text-[#00CBFF] transition-colors">
+                                        Learn More
+                                        <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Custom Solutions CTA */}
-                <div className="mt-12 bg-[#0029A2] rounded-2xl p-8 text-[#FFFFFF] text-center">
-                    <h3 className="text-2xl font-bold mb-4">Custom Solutions & Consultancy</h3>
-                    <p className="mb-6 max-w-2xl mx-auto">
+            </div>
+        </section>
+    );
+}
+
+// Custom Solutions & Consultancy Section
+function CustomSolutionsSection() {
+    const fadeIn1 = useFadeInAnimation();
+    const fadeIn2 = useFadeInAnimation();
+    const fadeIn3 = useFadeInAnimation();
+
+    return (
+        <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,188,212,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,188,212,0.03)_1px,transparent_1px)] bg-[size:8rem_8rem]"></div>
+
+            {/* Floating Orbs */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{animationDelay: '3s'}}></div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                {/* Header */}
+                <div ref={fadeIn1.ref} className={`text-center mb-16 transition-all duration-1000 ${fadeIn1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm rounded-full px-6 py-2 mb-8">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                        <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wide">Beyond Standard Solutions</span>
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Custom Solutions & Consultancy</h2>
+                    <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
                         Every challenge is unique. We combine and adapt our technologies to engineer custom,
-                        practical applications that solve your most complex problems.
+                        practical applications that solve your <span className="text-cyan-400 font-semibold">most complex problems</span>.
                     </p>
-                    <div className="mb-6">
-                        <h4 className="text-xl font-semibold mb-3">Cybersecurity & Data Protection Services</h4>
-                        <div className="grid md:grid-cols-2 gap-3 max-w-2xl mx-auto text-left">
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span>Proactive threat intelligence</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+
+                {/* Main Content Grid */}
+                <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                    {/* Left: Custom Solutions */}
+                    <div ref={fadeIn2.ref} className={`transition-all duration-1000 delay-200 ${fadeIn2.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+                        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-500">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                 </svg>
-                                <span>Risk assessment & mitigation</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span>Regulatory compliance</span>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">Tailored Engineering</h3>
+                                    <p className="text-cyan-400 font-medium">Built for Your Specific Needs</p>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <svg className="w-5 h-5 text-[#00CBFF] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span>Business continuity planning</span>
+                            <p className="text-slate-300 leading-relaxed mb-6">
+                                Our engineering team doesn't just adapt existing solutions—we build from the ground up.
+                                Whether you need specialized AI models, custom hardware integration, or unique business logic,
+                                we create solutions that fit your exact requirements.
+                            </p>
+                            <div className="space-y-3">
+                                {[
+                                    "Custom AI model development",
+                                    "Specialized hardware integration",
+                                    "Unique business logic implementation",
+                                    "Legacy system modernization"
+                                ].map((item, index) => (
+                                    <div key={index} className="flex items-center gap-3">
+                                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                                        <span className="text-slate-300">{item}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                    <a href="#contact" className="inline-flex items-center gap-2 bg-[#FFFFFF] text-[#0029A2] font-bold px-6 py-3 rounded-full hover:bg-[#808080] hover:text-[#FFFFFF] transition-colors">
+
+                    {/* Right: Cybersecurity Services */}
+                    <div ref={fadeIn3.ref} className={`transition-all duration-1000 delay-400 ${fadeIn3.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-500">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">Cybersecurity & Data Protection</h3>
+                                    <p className="text-cyan-400 font-medium">Enterprise-Grade Security</p>
+                                </div>
+                            </div>
+                            <p className="text-slate-300 leading-relaxed mb-6">
+                                Protect your digital assets with our comprehensive cybersecurity solutions.
+                                From threat detection to compliance management, we ensure your business stays secure and operational.
+                            </p>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {[
+                                    { icon: "🛡️", text: "Proactive threat intelligence" },
+                                    { icon: "⚖️", text: "Risk assessment & mitigation" },
+                                    { icon: "📋", text: "Regulatory compliance" },
+                                    { icon: "🔄", text: "Business continuity planning" }
+                                ].map((service, index) => (
+                                    <div key={index} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors duration-300">
+                                        <div className="w-10 h-10 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-lg flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                                        <span className="text-slate-300 font-medium">{service.text}</span>
+                        </div>
+                                ))}
+                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Call to Action */}
+                <div className="text-center mt-16">
+                    <div className="inline-flex flex-col sm:flex-row gap-6 items-center">
+                        <a href="#contact" className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
                         <span>Let's Build Your Solution</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </a>
+
+                        <div className="text-center sm:text-left">
+                            <p className="text-slate-400 text-sm mb-1">Ready to discuss your project?</p>
+                            <p className="text-cyan-400 font-semibold">Free consultation available</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -522,8 +1127,22 @@ function TeamSection() {
     ];
 
     return (
-        <section id="team" className="py-20 bg-[#0029A2]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="team" className="py-20 relative">
+            <div className="relative rounded-3xl overflow-hidden mx-4 sm:mx-6 lg:mx-8">
+                {/* Solid Background */}
+                <div className="absolute inset-0 bg-[#1362BE]"></div>
+
+                {/* Subtle Pattern Overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+                {/* Decorative Elements */}
+                <div className="absolute top-6 right-6 w-20 h-20 bg-white/5 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-6 left-6 w-16 h-16 bg-white/8 rounded-full blur-xl"></div>
+                <div className="absolute top-1/3 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-white/60 rounded-full"></div>
+
+                <div className="relative p-12">
+                    <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Leadership Team</h2>
                     <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -545,6 +1164,8 @@ function TeamSection() {
                             <p className="text-white/70 text-sm">{member.expertise}</p>
                         </div>
                     ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -610,7 +1231,7 @@ function TestimonialsSection() {
 // Contact Section
 function ContactSection() {
     return (
-        <section id="contact" className="py-20 bg-[#0029A2]">
+        <section id="contact" className="py-20 bg-[#1362BE]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-6">Ready to Transform Your Business?</h2>
@@ -791,11 +1412,13 @@ function ContactSection() {
 // Footer Component
 function Footer() {
     return (
-        <footer className="bg-black text-white">
+        <footer className="bg-[#11192E] text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <h3 className="text-2xl font-bold text-[#00CBFF] mb-4">Kukuma</h3>
+                        <a href="#home" className="inline-block mb-4">
+                            <img src="/images/kukuma logo landscape.svg" alt="Kukuma Advanced Technologies" className="h-16 w-auto hover:opacity-80 transition-opacity duration-300" />
+                        </a>
                         <p className="text-gray-400 mb-4">
                             Engineering Intelligence. Delivering Excellence.
                         </p>
@@ -907,7 +1530,7 @@ export default function Welcome() {
                         {/* Logo */}
                         <div className="flex items-center">
                             <a href="#home" className="flex items-center">
-                                <img src="/logo/Artboard5.svg" alt="Kukuma Advanced Technologies" className="h-16 w-auto" />
+                                <img src="/images/kukuma logo landscape.svg" alt="Kukuma Advanced Technologies" className="h-16 w-auto" />
                             </a>
                         </div>
 
@@ -956,6 +1579,7 @@ export default function Welcome() {
                 <HeroSection />
                 <AboutSection />
                 <ServicesSection />
+                <CustomSolutionsSection />
                 <TeamSection />
                 <TestimonialsSection />
                 <ContactSection />
