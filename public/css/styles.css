@@ -34,7 +34,11 @@
     --space-2xl: 6rem;
 
     /* Typography */
-    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-display: 'Wix Madefor Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-text: 'Wix Madefor Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family: var(--font-family-text);
+
+    /* Font Sizes */
     --font-size-xs: 0.875rem;
     --font-size-sm: 1rem;
     --font-size-md: 1.125rem;
@@ -44,6 +48,16 @@
     --font-size-3xl: 2.5rem;
     --font-size-4xl: 3rem;
     --font-size-5xl: 3.5rem;
+
+    /* Typography Classes */
+    --headline-font: var(--font-family-display);
+    --headline-weight: 700;
+    --subheadline-font: var(--font-family-display);
+    --subheadline-weight: 500;
+    --body-header-font: var(--font-family-text);
+    --body-header-weight: 700;
+    --body-text-font: var(--font-family-text);
+    --body-text-weight: 400;
 
     /* Transitions */
     --transition-fast: 200ms ease;
@@ -71,6 +85,33 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================
+   Typography Classes
+   =========================== */
+.headline {
+    font-family: var(--headline-font);
+    font-weight: var(--headline-weight);
+    line-height: 1.2;
+}
+
+.subheadline {
+    font-family: var(--subheadline-font);
+    font-weight: var(--subheadline-weight);
+    line-height: 1.3;
+}
+
+.body-header {
+    font-family: var(--body-header-font);
+    font-weight: var(--body-header-weight);
+    line-height: 1.4;
+}
+
+.body-text {
+    font-family: var(--body-text-font);
+    font-weight: var(--body-text-weight);
+    line-height: 1.6;
 }
 
 /* ===========================
@@ -277,8 +318,9 @@ body {
 }
 
 .hero-title {
+    font-family: var(--headline-font);
     font-size: var(--font-size-5xl);
-    font-weight: 800;
+    font-weight: var(--headline-weight);
     line-height: 1.1;
     margin-bottom: var(--space-md);
     animation: fadeInDown 1s ease;
@@ -292,7 +334,9 @@ body {
 }
 
 .hero-subtitle {
+    font-family: var(--subheadline-font);
     font-size: var(--font-size-lg);
+    font-weight: var(--subheadline-weight);
     color: var(--gray-light);
     max-width: 600px;
     margin: 0 auto var(--space-lg);
@@ -443,13 +487,16 @@ body {
 }
 
 .section-title {
+    font-family: var(--headline-font);
     font-size: var(--font-size-4xl);
-    font-weight: 700;
+    font-weight: var(--headline-weight);
     margin-bottom: var(--space-sm);
 }
 
 .section-subtitle {
+    font-family: var(--subheadline-font);
     font-size: var(--font-size-lg);
+    font-weight: var(--subheadline-weight);
     color: var(--gray-light);
 }
 
@@ -466,12 +513,16 @@ body {
 }
 
 .about-content h3 {
+    font-family: var(--body-header-font);
     font-size: var(--font-size-2xl);
+    font-weight: var(--body-header-weight);
     margin-bottom: var(--space-md);
     color: var(--primary);
 }
 
 .about-content p {
+    font-family: var(--body-text-font);
+    font-weight: var(--body-text-weight);
     color: var(--gray-light);
     margin-bottom: var(--space-md);
     line-height: 1.8;
@@ -640,17 +691,23 @@ body {
 }
 
 .solution-card h3 {
+    font-family: var(--body-header-font);
     font-size: var(--font-size-xl);
+    font-weight: var(--body-header-weight);
     margin-bottom: var(--space-sm);
 }
 
 .solution-card h4 {
+    font-family: var(--body-header-font);
     font-size: var(--font-size-md);
+    font-weight: var(--body-header-weight);
     color: var(--primary);
     margin-bottom: var(--space-sm);
 }
 
 .solution-card p {
+    font-family: var(--body-text-font);
+    font-weight: var(--body-text-weight);
     color: var(--gray-light);
     margin-bottom: var(--space-md);
     line-height: 1.7;
@@ -1443,8 +1500,9 @@ body {
 
 /* Enhanced Hero Title */
 .hero-title {
+    font-family: var(--headline-font);
     font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 800;
+    font-weight: var(--headline-weight);
     line-height: 1.1;
     margin-bottom: 2rem;
     position: relative;
@@ -1508,7 +1566,9 @@ body {
 }
 
 .hero-subtitle {
+    font-family: var(--subheadline-font);
     font-size: 1.25rem;
+    font-weight: var(--subheadline-weight);
     color: var(--gray-light);
     line-height: 1.6;
     margin: 0;
