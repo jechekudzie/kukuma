@@ -10,6 +10,7 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.tsx'],
             ssr: 'resources/js/ssr.tsx',
             refresh: true,
+            detectTls: false,
         }),
         react(),
         tailwindcss(),
@@ -17,6 +18,19 @@ export default defineConfig({
             formVariants: true,
         }),
     ],
+    server: {
+        host: '127.0.0.1',
+        port: 5173,
+        strictPort: true,
+        hmr: {
+            host: '127.0.0.1',
+            port: 5173,
+        },
+        cors: {
+            origin: true,
+            credentials: true,
+        }
+    },
     esbuild: {
         jsx: 'automatic',
     },
